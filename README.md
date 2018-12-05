@@ -2,6 +2,7 @@
 
 
 example:
+```hcl
 
 resource "aws_instance" "web" {
   ami           = "${data.aws_ami.rhel.id}"
@@ -18,3 +19,5 @@ module "test_module" {
   count = 1
   ec2_instances   = { names = ["TestInstance"] , ids = ["${aws_instance.web.id}"] }
 }
+
+```
