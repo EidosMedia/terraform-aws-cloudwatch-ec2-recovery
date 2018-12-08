@@ -27,3 +27,7 @@ variable "threshold" {
 variable "alarm_description" {    
   default = "Auto recover the EC2 instance if Status Check fails."
 }
+
+variable "sns_mail_topic" {
+  default = ""
+}

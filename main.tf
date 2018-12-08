@@ -14,7 +14,7 @@ resource "aws_cloudwatch_metric_alarm" "this" {
     InstanceId = "${element(var.ec2_instances["ids"], count.index)}"
   }
 
-  alarm_actions = ["arn:aws:automate:${data.aws_region.current.name}:ec2:recover"]
+  alarm_actions = ["arn:aws:automate:${data.aws_region.current.name}:ec2:recover","${var.sns_mail_topic}"]
   threshold         = "${var.threshold}"
   alarm_description = "${var.alarm_description}"
 }
